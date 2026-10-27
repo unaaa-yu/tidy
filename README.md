@@ -1,2 +1,2 @@
 # Tidy
-A tool that helps tidy up your folder automatically
+a tool that helps tidy up your folder automatically
