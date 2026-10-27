@@ -6,9 +6,5 @@ public class ScanSession
 
     public string Path { get; set; } = string.Empty;
 
-    public DateTime time { get; set; };
-
-    public List<FileItem> Files { get; set; } = new List<FileItem>();
-
-    public List<DuplicateGroup> DuplicateGroups { get; set; } = new List<DuplicateGroup>();
+    public DateTime Time { get; set; };
 }
