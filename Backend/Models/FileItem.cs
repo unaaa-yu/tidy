@@ -1,4 +1,4 @@
-namespace Tidy.Backend.Models.FileItem;
+namespace Tidy.Backend.Models;
 
 public enum FileCategory
 {
