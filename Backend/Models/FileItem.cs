@@ -22,11 +22,11 @@ public class FileItem
 {
     public Guid Id { get; set; } = Guid.NewGuid();
 
-    public string Name { get; set; } = string.Empty;
+    public required string Name { get; set; }
 
     public FileCategory Type { get; set; } = FileCategory.Unknown;
 
-    public string Path { get; set; } = string.Empty;
+    public required string Path { get; set; }
 
     public string Hash { get; set; } = string.Empty; // Hash of the file content for duplicate detection
 

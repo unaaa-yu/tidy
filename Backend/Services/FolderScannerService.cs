@@ -1,6 +1,6 @@
 namespace Tidy.Backend.Services;
 
-using Tidy.Backend.Models.ScanSession;
+using Tidy.Backend.Models;
 
 public interface IFolderScannerService
 {

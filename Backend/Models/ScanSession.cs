@@ -6,5 +6,5 @@ public class ScanSession
 
     public string Path { get; set; } = string.Empty;
 
-    public DateTime Time { get; set; };
+    public DateTime Time { get; set; }
 }

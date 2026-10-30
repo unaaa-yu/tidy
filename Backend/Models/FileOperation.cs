@@ -2,7 +2,9 @@ namespace Tidy.Backend.Models;
 
 public class FileOperation
 {
-    public FileItem File { get; set; };
+    public Guid Id { get; set; } = Guid.NewGuid();
+    
+    public required FileItem File { get; set; }
 
     public string Source { get; set; } = string.Empty;
     
