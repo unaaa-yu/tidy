@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Tidy.Data.Database;
+using Tidy.Data;
 
 #nullable disable
 
@@ -35,10 +35,12 @@ namespace Tidy.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasMaxLength(260)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Path")
                         .IsRequired()
+                        .HasMaxLength(1024)
                         .HasColumnType("TEXT");
 
                     b.Property<long>("Size")
@@ -48,6 +50,11 @@ namespace Tidy.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Hash");
+
+                    b.HasIndex("Path")
+                        .IsUnique();
 
                     b.ToTable("FileItems");
                 });
@@ -60,6 +67,7 @@ namespace Tidy.Migrations
 
                     b.Property<string>("Destination")
                         .IsRequired()
+                        .HasMaxLength(1024)
                         .HasColumnType("TEXT");
 
                     b.Property<Guid>("FileId")
@@ -67,6 +75,7 @@ namespace Tidy.Migrations
 
                     b.Property<string>("Source")
                         .IsRequired()
+                        .HasMaxLength(1024)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -84,6 +93,7 @@ namespace Tidy.Migrations
 
                     b.Property<string>("Path")
                         .IsRequired()
+                        .HasMaxLength(1024)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("Time")
